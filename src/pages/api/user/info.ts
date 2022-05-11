@@ -12,6 +12,7 @@ const handler = nc({ onError, onNoMatch }).use(checkAuth);
 
 handler.get(async (req: NextApiRequest, res: NextApiResponse<IResponse>) => {
   const thisIsRedundant = "";
+  console.log("thisIsRedundant:", thisIsRedundant);
   const { user } = await getSession({ req });
   const userInfo = await prisma.user.findUnique({
     where: {
